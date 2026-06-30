@@ -1,30 +1,30 @@
 {
   "airport": "DEN",
   "target_date": "2025-01-02",
-  "disruption_window": "7:00-16:00",
-  "primary_delay_minutes": 120,
-  "propagation_window_hours": 8,
-  "primary_impacted_flights": 478,
-  "downstream_impacted_flights": 6150,
-  "total_impacted_flights": 6628,
-  "baseline_total_positive_delay_minutes": 100735.0,
-  "simulated_total_positive_delay_minutes": 422787.0,
-  "total_delay_increase_minutes": 322052.0,
-  "average_delay_increase_minutes": 48.59,
+  "disruption_window": "8:00-14:00",
+  "primary_delay_minutes": 90,
+  "propagation_window_hours": 6,
+  "primary_impacted_flights": 357,
+  "downstream_impacted_flights": 5867,
+  "total_impacted_flights": 6224,
+  "baseline_total_positive_delay_minutes": 80284.0,
+  "simulated_total_positive_delay_minutes": 302982.0,
+  "total_delay_increase_minutes": 222698.0,
+  "average_delay_increase_minutes": 35.78,
   "stage_summary": [
     {
       "scenario_stage": "downstream_propagation",
-      "impacted_flights": 6150,
-      "total_added_delay": 264692.0,
-      "avg_added_delay": 43.039349593495935,
-      "total_delay_increase": 264692.0
+      "impacted_flights": 5867,
+      "total_added_delay": 190568.0,
+      "avg_added_delay": 32.481336287710924,
+      "total_delay_increase": 190568.0
     },
     {
       "scenario_stage": "primary_airport_disruption",
-      "impacted_flights": 478,
-      "total_added_delay": 57360.0,
-      "avg_added_delay": 120.0,
-      "total_delay_increase": 57360.0
+      "impacted_flights": 357,
+      "total_added_delay": 32130.0,
+      "avg_added_delay": 90.0,
+      "total_delay_increase": 32130.0
     }
   ]
 }
