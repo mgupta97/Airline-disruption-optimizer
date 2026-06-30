@@ -12,3 +12,4 @@ pytest
 python-dotenv
 tabulate
 joblib
+watchdog

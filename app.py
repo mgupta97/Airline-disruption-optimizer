@@ -49,7 +49,7 @@ def load_markdown(path: Path) -> str | None:
 
 def show_image(path: Path, caption: str | None = None) -> None:
     if path.exists():
-        st.image(str(path), caption=caption, use_container_width=True)
+        st.image(str(path), caption=caption, width="stretch")
     else:
         st.warning(f"Missing figure: {path}")
 
@@ -252,7 +252,7 @@ def network_page() -> None:
         available_cols = [col for col in display_cols if col in airport_metrics.columns]
         st.dataframe(
             airport_metrics[available_cols].head(20),
-            use_container_width=True,
+            width="stretch",
         )
     else:
         st.warning("Airport network metrics not found.")
@@ -273,7 +273,7 @@ def network_page() -> None:
         available_cols = [col for col in display_cols if col in route_metrics.columns]
         st.dataframe(
             route_metrics[available_cols].head(20),
-            use_container_width=True,
+            width="stretch",
         )
     else:
         st.warning("Route network metrics not found.")
@@ -395,7 +395,7 @@ def simulator_page() -> None:
 
     if sim_df is not None:
         st.subheader("Latest Impacted Flights")
-        st.dataframe(sim_df.head(100), use_container_width=True)
+        st.dataframe(sim_df.head(100), width="stretch")
 
     st.divider()
 
@@ -499,11 +499,11 @@ def optimizer_page() -> None:
         st.subheader("Selected Recovery Actions")
         st.dataframe(
             selected.sort_values("optimized_recovered_delay", ascending=False).head(100),
-            use_container_width=True,
+            width="stretch",
         )
 
         st.subheader("All Candidate Flights")
-        st.dataframe(plan.head(100), use_container_width=True)
+        st.dataframe(plan.head(100), width="stretch")
 
     st.divider()
 
