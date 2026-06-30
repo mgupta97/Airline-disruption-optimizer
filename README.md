@@ -2,17 +2,23 @@
 
 ## Abstract
 
-Airline operations are highly sensitive to disruptions caused by weather, airport congestion, aircraft delays, and network dependencies. A delay at one airport can propagate across multiple routes, affect downstream flights, increase passenger inconvenience, and create system-wide operational instability. This project develops an end-to-end research prototype that combines machine learning, network analysis, disruption simulation, and mathematical optimization to support airline disruption recovery decisions.
+Airline operations are highly sensitive to disruptions caused by weather, airport congestion, aircraft delays, and network dependencies. A delay at one airport can propagate across routes, affect downstream flights, increase passenger inconvenience, and create system-wide operational instability.
 
-Using U.S. airline on-time performance data from January 2025, the system cleans and analyzes flight-level data, predicts arrival delay risk, identifies high-risk airports and routes, simulates airport disruption scenarios, and optimizes recovery actions under limited operational capacity. The project demonstrates a decision-support pipeline that moves beyond prediction and toward actionable optimization, making it relevant to Operations Research, Industrial Engineering, and transportation systems research.
+This project develops an end-to-end research prototype that combines machine learning, network analysis, disruption simulation, and mathematical optimization to support airline disruption recovery decisions. Using U.S. airline on-time performance data from January 2025, the system cleans and analyzes flight-level data, predicts arrival delay risk, identifies high-risk airports and routes, simulates airport disruption scenarios, and optimizes recovery actions under limited operational capacity.
+
+The project demonstrates a decision-support pipeline that moves beyond prediction toward actionable optimization, making it relevant to Operations Research, Industrial Engineering, transportation systems, and PhD-level research in decision-making under uncertainty.
 
 ---
 
 ## 1. Research Motivation
 
-Airline disruption recovery is a complex decision-making problem. Airlines must respond quickly when disruptions occur, but recovery resources are limited. They may need to decide which flights to delay, prioritize, recover, or potentially cancel while balancing operational feasibility, passenger impact, network stability, and fairness across carriers or airports.
+Airline disruption recovery is a complex operational decision problem. When a major airport experiences weather, congestion, aircraft delay, or capacity reduction, airlines must quickly decide how to recover their schedule.
 
-Traditional delay prediction models can estimate whether a flight is likely to be delayed, but prediction alone does not answer the operational question: **what should the airline do next?**
+These decisions are difficult because airline networks are interconnected. A delayed flight can affect aircraft rotations, downstream departures, passenger connections, gate usage, crew schedules, and route-level service reliability.
+
+Traditional delay prediction models can estimate whether a flight is likely to be delayed, but prediction alone does not answer the operational question:
+
+> What should the airline do next?
 
 This project addresses that gap by combining predictive analytics with optimization. The central research question is:
 
@@ -28,8 +34,14 @@ The processed dataset contains:
 
 * 539,747 flights
 * 34 cleaned columns
-* Flight date, carrier, origin, destination, scheduled times, actual times, delay metrics, cancellation indicators, diversion indicators, and distance
-* Engineered labels for 15+ minute and 60+ minute arrival delays
+* Flight date
+* Carrier
+* Origin and destination airports
+* Scheduled departure and arrival times
+* Actual departure and arrival delay metrics
+* Cancellation and diversion indicators
+* Distance
+* Engineered delay labels
 
 Key dataset statistics:
 
@@ -75,7 +87,23 @@ This structure is designed to show how airline operations can be studied not onl
 
 ---
 
-## 4. Exploratory Delay Analysis
+## 4. Data Cleaning Pipeline
+
+The data cleaning module reads BTS airline on-time performance data from raw CSV or ZIP files and converts it into a structured Parquet dataset.
+
+The pipeline standardizes column names, handles duplicate BTS fields, converts dates and numeric fields, and engineers target variables for delay prediction.
+
+Engineered labels include:
+
+* `arrival_delay_15`: whether a flight arrived 15 or more minutes late
+* `arrival_delay_60`: whether a flight arrived 60 or more minutes late
+* `departure_delay_15`: whether a flight departed 15 or more minutes late
+
+The cleaned dataset becomes the foundation for exploratory analysis, modeling, network analysis, simulation, and optimization.
+
+---
+
+## 5. Exploratory Delay Analysis
 
 The exploratory analysis identifies delay and cancellation patterns by carrier, airport, route, and day of week.
 
@@ -93,7 +121,7 @@ This analysis provides the foundation for later network modeling and disruption 
 
 ---
 
-## 5. Baseline Delay Prediction Model
+## 6. Baseline Delay Prediction Model
 
 A baseline machine learning model was developed to predict whether a flight will arrive 15 or more minutes late.
 
@@ -121,7 +149,7 @@ The baseline model provides an initial delay-risk estimate that can later be imp
 
 ---
 
-## 6. Airline Network Risk Analysis
+## 7. Airline Network Risk Analysis
 
 The project converts flight records into a directed airport-route network.
 
@@ -147,7 +175,7 @@ The network analysis therefore helps identify airports and routes that are impor
 
 ---
 
-## 7. Disruption Simulation Engine
+## 8. Disruption Simulation Engine
 
 The disruption simulator estimates the impact of an airport-level disruption.
 
@@ -155,13 +183,11 @@ A typical scenario asks:
 
 > What happens if a major airport experiences a disruption during a selected time window?
 
-The simulator models two types of impact:
+The simulator models two types of impact.
 
-1. **Primary disruption impact**
-   Flights departing from the disrupted airport during the disruption window receive additional delay.
+First, primary disruption impact occurs when flights departing from the disrupted airport during the selected time window receive additional delay.
 
-2. **Downstream propagation impact**
-   Destination airports receiving delayed inbound flights experience additional pressure, which can affect later outbound flights.
+Second, downstream propagation impact occurs when destination airports receiving delayed inbound flights experience additional operational pressure, which can affect later outbound flights.
 
 The simulator outputs:
 
@@ -170,13 +196,14 @@ The simulator outputs:
 * Total impacted flights
 * Added delay minutes
 * Average delay increase per impacted flight
-* Top affected airports and routes
+* Top affected airports
+* Top affected routes
 
 This provides a controlled experimental environment for testing recovery strategies.
 
 ---
 
-## 8. Recovery Optimization Model
+## 9. Recovery Optimization Model
 
 The recovery optimizer is the first formal Operations Research component of the project.
 
@@ -202,7 +229,7 @@ This allows the project to move from descriptive analysis to prescriptive decisi
 
 ---
 
-## 9. Dashboard
+## 10. Dashboard
 
 The Streamlit dashboard connects the full project into an interactive decision-support system.
 
@@ -222,7 +249,7 @@ This makes the project useful not only as a research prototype, but also as a po
 
 ---
 
-## 10. Research Contribution
+## 11. Research Contribution
 
 The project’s main contribution is the integration of prediction, network analysis, simulation, and optimization into one end-to-end airline recovery framework.
 
@@ -239,7 +266,7 @@ This combination is directly aligned with Operations Research and Industrial Eng
 
 ---
 
-## 11. Limitations
+## 12. Limitations
 
 This version is an MVP research prototype. It does not yet include:
 
@@ -257,7 +284,7 @@ The current simulator uses simplified propagation logic. The recovery optimizer 
 
 ---
 
-## 12. Future Research Extensions
+## 13. Future Research Extensions
 
 Future versions can extend this project in several PhD-relevant directions.
 
@@ -291,7 +318,7 @@ Extend the simulator to handle multiple simultaneous disruptions, such as weathe
 
 ---
 
-## 13. PhD Research Positioning
+## 14. PhD Research Positioning
 
 This project supports a broader research direction in:
 
@@ -303,7 +330,7 @@ A possible PhD research statement based on this project is:
 
 ---
 
-## 14. Conclusion
+## 15. Conclusion
 
 This project shows how airline disruption recovery can be studied as a full decision pipeline rather than a standalone prediction task. By combining machine learning, network analysis, simulation, and optimization, the system provides a foundation for future research in airline operations, transportation analytics, and Operations Research.
 
