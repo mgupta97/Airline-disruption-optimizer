@@ -229,6 +229,55 @@ This allows the project to move from descriptive analysis to prescriptive decisi
 
 ---
 
+## Selected Visual Outputs
+
+### 1. Arrival Delay Distribution
+
+This chart shows the distribution of arrival delay minutes across the January 2025 flight dataset. It highlights the long-tail nature of airline delays, where most flights are near on-time but a smaller group experiences significant delays.
+
+![Arrival Delay Distribution](figures/arrival_delay_distribution.png)
+
+---
+
+### 2. Carrier Delay Rate
+
+This visualization compares the percentage of flights arriving 15 or more minutes late across carriers. It helps identify which carriers experienced higher delay rates during the study period.
+
+![Carrier Delay Rate](figures/carrier_delay_rate.png)
+
+---
+
+### 3. Airport Disruption Risk Score
+
+This chart ranks airports using a disruption-risk score that combines delay performance, cancellation risk, and network importance. This is one of the most important visuals for the Operations Research angle of the project.
+
+![Airport Disruption Risk](figures/airport_disruption_risk_score.png)
+
+---
+
+### 4. Airline Route Network
+
+This network graph represents airports as nodes and routes as directed edges. It shows how airline operations form an interconnected transportation network where disruptions can propagate from one airport to another.
+
+![Airline Route Network](figures/airline_route_network_top_routes.png)
+
+---
+
+### 5. Simulated Disruption vs Optimized Recovery
+
+This chart compares total positive delay under the simulated disruption scenario versus the optimized recovery plan. It demonstrates the value of moving from prediction to optimization.
+
+![Optimized vs Simulated Delay](figures/optimized_vs_simulated_delay.png)
+
+---
+
+### 6. Top Optimized Recovery Routes
+
+This chart shows the routes prioritized by the recovery optimizer. These are the routes where recovery actions produce the largest delay-reduction benefit under limited operational capacity.
+
+![Top Optimized Recovery Routes](figures/top_optimized_recovery_routes.png)
+
+---
 ## 10. Dashboard
 
 The Streamlit dashboard connects the full project into an interactive decision-support system.
