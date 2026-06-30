@@ -1,0 +1,14 @@
+{
+  "optimization_status": "Optimal",
+  "candidate_flights": 6224,
+  "max_recovery_actions": 120,
+  "recovery_actions_used": 120,
+  "primary_actions_used": 48,
+  "downstream_actions_used": 72,
+  "simulated_total_positive_delay_minutes": 302982.0,
+  "optimized_total_positive_delay_minutes": 296934.0,
+  "total_recovered_delay_minutes": 6048.0,
+  "delay_reduction_pct": 2.0,
+  "carrier_share_limit": 0.35,
+  "airport_share_limit": 0.4
+}
