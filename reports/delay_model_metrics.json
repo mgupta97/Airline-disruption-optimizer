@@ -1,0 +1,35 @@
+{
+  "model": "SGDClassifier logistic baseline",
+  "target": "arrival_delay_15",
+  "split_date": "2025-01-25 00:00:00",
+  "train_rows": 418765,
+  "test_rows": 103504,
+  "test_delay_rate_pct": 11.19,
+  "accuracy": 0.5472,
+  "precision": 0.1319,
+  "recall": 0.546,
+  "f1": 0.2125,
+  "roc_auc": 0.5587,
+  "average_precision": 0.1331,
+  "confusion_matrix": [
+    [
+      50319,
+      41604
+    ],
+    [
+      5258,
+      6323
+    ]
+  ],
+  "features": [
+    "carrier",
+    "origin",
+    "dest",
+    "crs_dep_hour",
+    "crs_arr_hour",
+    "day_of_week",
+    "month",
+    "distance",
+    "scheduled_elapsed_time"
+  ]
+}
