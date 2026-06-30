@@ -10,3 +10,4 @@ pyarrow
 jupyter
 pytest
 python-dotenv
+tabulate
