@@ -1,0 +1,12 @@
+pandas
+numpy
+scikit-learn
+matplotlib
+plotly
+streamlit
+networkx
+pulp
+pyarrow
+jupyter
+pytest
+python-dotenv
