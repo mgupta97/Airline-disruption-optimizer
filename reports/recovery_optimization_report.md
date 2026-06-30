@@ -7,61 +7,61 @@ The recovery optimizer selects a limited number of disrupted flights to prioriti
 ## Optimization Summary
 
 - Solver status: Optimal
-- Candidate flights: 6,224
+- Candidate flights: 6,628
 - Max recovery actions allowed: 120
 - Recovery actions used: 120
 - Primary actions used: 48
 - Downstream actions used: 72
-- Simulated total positive delay: 302,982.00 minutes
-- Optimized total positive delay: 296,934.00 minutes
-- Total recovered delay: 6,048.00 minutes
-- Delay reduction: 2.0%
+- Simulated total positive delay: 422,787.00 minutes
+- Optimized total positive delay: 415,731.00 minutes
+- Total recovered delay: 7,056.00 minutes
+- Delay reduction: 1.67%
 
 ## Impact by Scenario Stage
 
 | scenario_stage             |   candidate_flights |   recovery_actions |   recovered_delay |   remaining_delay |
 |:---------------------------|--------------------:|-------------------:|------------------:|------------------:|
-| downstream_propagation     |                5867 |                 72 |              3024 |            264499 |
-| primary_airport_disruption |                 357 |                 48 |              3024 |             32435 |
+| downstream_propagation     |                6150 |                 72 |              3024 |            357441 |
+| primary_airport_disruption |                 478 |                 48 |              4032 |             58290 |
 
 ## Recovery Actions by Carrier
 
 | carrier   |   recovery_actions |   recovered_delay |
 |:----------|-------------------:|------------------:|
-| UA        |                 32 |              1911 |
-| WN        |                 29 |              1491 |
-| AA        |                 28 |              1218 |
-| DL        |                 25 |              1113 |
-| F9        |                  2 |               126 |
-| B6        |                  1 |                63 |
-| AS        |                  1 |                42 |
-| G4        |                  1 |                42 |
-| OO        |                  1 |                42 |
+| UA        |                 42 |              2772 |
+| WN        |                 15 |              1260 |
+| AS        |                 20 |               840 |
+| DL        |                 16 |               840 |
+| B6        |                 13 |               630 |
+| AA        |                  9 |               462 |
+| HA        |                  3 |               126 |
+| F9        |                  1 |                84 |
+| NK        |                  1 |                42 |
 
 ## Top Flights Selected for Recovery
 
 | carrier   |   flight_num | origin   | dest   | scenario_stage             |   simulated_positive_delay |   delay_increase |   optimized_recovered_delay |   priority_score |
 |:----------|-------------:|:---------|:-------|:---------------------------|---------------------------:|-----------------:|----------------------------:|-----------------:|
-| AA        |          395 | DEN      | MIA    | primary_airport_disruption |                         95 |               90 |                          63 |            74.49 |
-| UA        |          470 | DEN      | SRQ    | primary_airport_disruption |                         93 |               90 |                          63 |            74.1  |
-| UA        |          424 | DEN      | RSW    | primary_airport_disruption |                         90 |               90 |                          63 |            74.3  |
-| UA        |          384 | DEN      | HNL    | primary_airport_disruption |                         90 |               90 |                          63 |            75.57 |
-| UA        |          350 | DEN      | TPA    | primary_airport_disruption |                         90 |               90 |                          63 |            74.04 |
-| UA        |          283 | DEN      | FLL    | primary_airport_disruption |                         90 |               90 |                          63 |            74.48 |
-| WN        |         1941 | DEN      | ALB    | primary_airport_disruption |                         95 |               90 |                          63 |            74.32 |
-| WN        |         3473 | DEN      | BOS    | primary_airport_disruption |                         92 |               90 |                          63 |            74.63 |
-| WN        |         3515 | DEN      | BOS    | primary_airport_disruption |                        144 |               90 |                          63 |            74.63 |
-| WN        |          496 | DEN      | BWI    | primary_airport_disruption |                         90 |               90 |                          63 |            74    |
-| WN        |         2701 | DEN      | FLL    | primary_airport_disruption |                         90 |               90 |                          63 |            74.48 |
-| WN        |          651 | DEN      | LGA    | primary_airport_disruption |                         90 |               90 |                          63 |            74.34 |
-| WN        |         3367 | DEN      | LGA    | primary_airport_disruption |                         90 |               90 |                          63 |            74.34 |
-| WN        |          440 | DEN      | MCO    | primary_airport_disruption |                         90 |               90 |                          63 |            74.12 |
-| WN        |          671 | DEN      | MCO    | primary_airport_disruption |                         90 |               90 |                          63 |            74.12 |
-| WN        |         6391 | DEN      | MCO    | primary_airport_disruption |                         90 |               90 |                          63 |            74.12 |
-| WN        |         1387 | DEN      | SRQ    | primary_airport_disruption |                         90 |               90 |                          63 |            74.1  |
-| WN        |         2727 | DEN      | TPA    | primary_airport_disruption |                         90 |               90 |                          63 |            74.04 |
-| DL        |          751 | DEN      | LGA    | primary_airport_disruption |                         90 |               90 |                          63 |            74.34 |
-| DL        |         2537 | DEN      | BOS    | primary_airport_disruption |                         90 |               90 |                          63 |            74.63 |
+| AA        |          395 | DEN      | MIA    | primary_airport_disruption |                        125 |              120 |                          84 |            98.97 |
+| UA        |          558 | DEN      | BOS    | primary_airport_disruption |                        120 |              120 |                          84 |            99.16 |
+| UA        |          424 | DEN      | RSW    | primary_airport_disruption |                        120 |              120 |                          84 |            98.71 |
+| UA        |          384 | DEN      | HNL    | primary_airport_disruption |                        120 |              120 |                          84 |           100.75 |
+| UA        |          283 | DEN      | FLL    | primary_airport_disruption |                        120 |              120 |                          84 |            98.96 |
+| WN        |         1941 | DEN      | ALB    | primary_airport_disruption |                        125 |              120 |                          84 |            98.74 |
+| WN        |          368 | DEN      | BDL    | primary_airport_disruption |                        135 |              120 |                          84 |            98.91 |
+| WN        |         3473 | DEN      | BOS    | primary_airport_disruption |                        122 |              120 |                          84 |            99.16 |
+| WN        |         3515 | DEN      | BOS    | primary_airport_disruption |                        174 |              120 |                          84 |            99.16 |
+| WN        |         2701 | DEN      | FLL    | primary_airport_disruption |                        120 |              120 |                          84 |            98.96 |
+| WN        |          651 | DEN      | LGA    | primary_airport_disruption |                        120 |              120 |                          84 |            98.78 |
+| WN        |         3367 | DEN      | LGA    | primary_airport_disruption |                        120 |              120 |                          84 |            98.78 |
+| WN        |          671 | DEN      | MCO    | primary_airport_disruption |                        120 |              120 |                          84 |            98.48 |
+| WN        |         1034 | DEN      | MCO    | primary_airport_disruption |                        156 |              120 |                          84 |            98.48 |
+| WN        |         6391 | DEN      | MCO    | primary_airport_disruption |                        120 |              120 |                          84 |            98.48 |
+| WN        |         1489 | DEN      | ORF    | primary_airport_disruption |                        120 |              120 |                          84 |            98.51 |
+| WN        |         2225 | DEN      | PHL    | primary_airport_disruption |                        126 |              120 |                          84 |            98.52 |
+| WN        |         2117 | DEN      | PVD    | primary_airport_disruption |                        132 |              120 |                          84 |            99.04 |
+| WN        |         1153 | DEN      | RSW    | primary_airport_disruption |                        120 |              120 |                          84 |            98.71 |
+| DL        |          751 | DEN      | LGA    | primary_airport_disruption |                        120 |              120 |                          84 |            98.78 |
 
 ## Interpretation
 
