@@ -1,0 +1,50 @@
+{
+  "ORD Thunderstorm Ground Delay": {
+    "impacted_airports": ["ORD", "MDW"],
+    "capacity_reduction": 0.45,
+    "delay_multiplier": 1.65,
+    "passenger_cost_multiplier": 1.45,
+    "connection_risk_multiplier": 1.35,
+    "scenario_probability": 0.18
+  },
+  "DEN Winter Storm": {
+    "impacted_airports": ["DEN"],
+    "capacity_reduction": 0.40,
+    "delay_multiplier": 1.75,
+    "passenger_cost_multiplier": 1.50,
+    "connection_risk_multiplier": 1.30,
+    "scenario_probability": 0.14
+  },
+  "ATL Ground Stop": {
+    "impacted_airports": ["ATL"],
+    "capacity_reduction": 0.50,
+    "delay_multiplier": 1.85,
+    "passenger_cost_multiplier": 1.60,
+    "connection_risk_multiplier": 1.45,
+    "scenario_probability": 0.16
+  },
+  "Northeast Severe Weather": {
+    "impacted_airports": ["JFK", "LGA", "EWR", "BOS", "PHL", "DCA", "IAD"],
+    "capacity_reduction": 0.38,
+    "delay_multiplier": 1.60,
+    "passenger_cost_multiplier": 1.42,
+    "connection_risk_multiplier": 1.35,
+    "scenario_probability": 0.20
+  },
+  "West Coast Low Visibility": {
+    "impacted_airports": ["SFO", "LAX", "SAN", "SEA", "PDX"],
+    "capacity_reduction": 0.30,
+    "delay_multiplier": 1.45,
+    "passenger_cost_multiplier": 1.30,
+    "connection_risk_multiplier": 1.25,
+    "scenario_probability": 0.12
+  },
+  "Systemwide Moderate Disruption": {
+    "impacted_airports": [],
+    "capacity_reduction": 0.20,
+    "delay_multiplier": 1.25,
+    "passenger_cost_multiplier": 1.20,
+    "connection_risk_multiplier": 1.15,
+    "scenario_probability": 0.20
+  }
+}
