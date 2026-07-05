@@ -1,0 +1,8 @@
+strategy,selected_actions,recovered_delay_minutes,remaining_delay_minutes,recovery_rate,avg_recovery_per_action,carriers_affected,origin_airports_affected,dest_airports_affected,primary_actions,downstream_actions
+Random Recovery,2426,80284.0,0.0,1.0,33.09315746084089,14,119,205,115,2311
+Highest Delay First,2426,80284.0,0.0,1.0,33.09315746084089,14,119,205,115,2311
+Primary Impact First,2426,80284.0,0.0,1.0,33.09315746084089,14,119,205,115,2311
+Network Criticality First,2426,80284.0,0.0,1.0,33.09315746084089,14,119,205,115,2311
+Hybrid Delay + Network,2426,80284.0,0.0,1.0,33.09315746084089,14,119,205,115,2311
+Optimized Recovery Plan,2426,80284.0,0.0,1.0,33.09315746084089,14,119,205,115,2311
+No Recovery,0,0.0,80284.0,0.0,0.0,0,0,0,0,0
