@@ -1,0 +1,2 @@
+disrupted_records,total_delay_minutes,estimated_passengers_affected,estimated_missed_connection_risk,total_passenger_disruption_cost,avg_connection_risk_score,top_origin_airport_by_cost,top_route_by_cost
+2426,80284.0,266905.0,36440.83,12735076.52,30.715173124484753,ORD,PHL-DFW
